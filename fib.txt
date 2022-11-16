@@ -1,0 +1,32 @@
+Import time
+def fib_iter(n):
+  if n <= 2:
+    return n-1 
+  n1 = 0
+  n2 = 1
+  n3 = 0
+  for i in range(n-2):
+    n3 = n1 + n2
+    n1 = n2
+    n2 = n3  
+  return n3 
+
+def fib_recursive(n):
+  if (n <= 2):
+    return n-1 
+  return fib_recursive(n-1) + fib_recursive(n-2)
+
+start = time.time()
+print(fib_recursive(n))
+end=time.time()
+time_n=end-start
+print(“Recursive Time Complextiy: ”,time_n)
+
+start=time.time()
+print(fib_iter(n))
+end=time.time()
+time_n=end-start
+print(“iterative Time Complextiy: ”,time_n)
+
+
+
